@@ -44,6 +44,6 @@ variables:
                 default: "NoPublicAccess"
                 enum:
                   - NoPublicAccess
-                  - PublicRead
+                  - ObjectRead
 
 
