@@ -7,7 +7,7 @@ logoUrl: https://www.dropbox.com/s/4sfw8lofyafo614/HappyMikeyIconsq.jpg?dl=0
 
 variableGroups:
           - title: "Required Inputs"
-            variables
+            variables:
               - "compartment_ocid"
               - "region"
               - "bucket_name"
@@ -43,7 +43,7 @@ variables:
                 title: "Bucket Access Type"
                 default: "NoPublicAccess"
                 enum:
-                        - NoPublicAccess
-                        - PublicRead
+                  - NoPublicAccess
+                  - PublicRead
 
 
