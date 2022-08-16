@@ -1,6 +1,7 @@
 variable "compartment_ocid" {}
 variable "region" {}
 variable "bucket_name" {}
+variable "access_type" {}
 
 provider "oci" {
   region = var.region
@@ -15,7 +16,7 @@ resource "oci_objectstorage_bucket" "create_bucket" {
   name = var.bucket_name
   namespace = data.oci_objectstorage_namespace.namespace.namespace
 
-  access_type = "NoPublicAccess"
+  access_type = var.access_type
 }
 
 output "new_bucket" {
