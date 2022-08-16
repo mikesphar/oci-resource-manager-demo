@@ -1,27 +1,19 @@
-variable "compartment_ocid" {
-  default = "ocid1.compartment.oc1..aaaaaaaax4huh43m7va4t4lbcdmpmi22hjcdab3kbhj6vxjdeb55q4lqbklq"
-}
-
-variable "region" {
-  default = "us-ashburn-1"
-}
-
-variable "bucket_namespace" {
-  default = "idsdsqczf3yg"
-}
-
-variable "bucket_name" {
-  default = "resource_manager_demo_bucket"
-}
+variable "compartment_ocid" {}
+variable "region" {}
+variable "bucket_name" {}
 
 provider "oci" {
   region = var.region
 }
 
+data "oci_objectstorage_namespace" "namespace" {
+  compartment_id = var.compartment_ocid
+}
+
 resource "oci_objectstorage_bucket" "create_bucket" {
   compartment_id = var.compartment_ocid
   name = var.bucket_name
-  namespace = var.bucket_namespace
+  namespace = data.oci_objectstorage_namespace.namespace.namespace
 
   access_type = "NoPublicAccess"
 }
