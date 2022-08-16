@@ -7,7 +7,7 @@ variable "region" {
 }
 
 variable "bucket_namespace" {
-  default = "terraform"
+  default = "idsdsqczf3yg"
 }
 
 variable "bucket_name" {
