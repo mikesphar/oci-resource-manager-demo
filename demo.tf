@@ -3,7 +3,7 @@ variable "compartment_ocid" {
 }
 
 variable "region" {
-  default = "ca-toronto-1"
+  default = "us-ashburn-1"
 }
 
 variable "bucket_namespace" {
